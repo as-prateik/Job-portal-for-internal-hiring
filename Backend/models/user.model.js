@@ -33,6 +33,11 @@ const UserSchema = new mongoose.Schema({
     required: true,
     trim: true,
   },
+  role: {
+    type: String,
+    enum: ['hr', 'manager', 'employee'],
+    default: 'employee',
+  },
   email: {
     type: String,
     required: true,

@@ -27,6 +27,7 @@ const registerUser = async (req, res) => {
     const userProfile = new User({
       authId: newUser._id,
       name: name || username,
+      role: role || "employee",
       email: userEmail,
       phone: phone || "",
       skills: skills || [],
@@ -126,7 +127,35 @@ const loginUser = async (req, res) => {
   }
 };
 
+const changePassword = async (req, res) => {
+  try {
+    const userId = req.user.userId; // Populated from JWT middleware
+    const { oldPassword, newPassword } = req.body;
+
+    // 1. Fetch user
+    const user = await Auth.findById(userId);
+    if (!user) return res.status(404).json({ message: 'User not found' });
+
+    // 2. Compare old password
+    const isMatch = await bcrypt.compare(oldPassword, user.password);
+    if (!isMatch) return res.status(401).json({ message: 'Incorrect old password' });
+
+    // 3. Hash new password
+    const hashed = await bcrypt.hash(newPassword, 10);
+
+    // 4. Update
+    user.password = hashed;
+    await user.save();
+
+    res.status(200).json({ message: 'Password updated successfully' });
+  } catch (err) {
+    console.error('Error in changePassword:', err);
+    res.status(500).json({ message: 'Server error' });
+  }
+};
+
 module.exports = {
   registerUser,
   loginUser,
+  changePassword
 };

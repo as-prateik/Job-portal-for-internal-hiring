@@ -5,8 +5,8 @@ const path = require("path");
 // Get current user's profile
 exports.getProfile = async (req, res) => {
   try {
-    const username = req.user.username;
-    const user = await User.findOne({ username }).select("-__v");
+    const authId = req.user.userId;
+    const user = await User.findOne({ authId }).select("-__v");
     if (!user)
       return res.status(404).json({ message: "User profile not found" });
 

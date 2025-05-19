@@ -5,6 +5,8 @@ const mongoose = require('mongoose');
 // Create a new job (Manager only)
 exports.createJob = async (req, res) => {
   try {
+    console.log('Creating job with data:', req.body);
+    
     const { title, description, skillsRequired, location, salary, lastDate } = req.body;
 
     if (!title || !description || !skillsRequired || !location || !salary || !lastDate) {
