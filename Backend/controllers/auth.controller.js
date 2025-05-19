@@ -1,7 +1,7 @@
 const bcrypt = require("bcrypt");
 const Auth = require("../models/auth.model");
 
-const User = require("../models/user.model"); // Add this import at the top
+const User = require("../models/user.model"); 
 
 const registerUser = async (req, res) => {
   try {
