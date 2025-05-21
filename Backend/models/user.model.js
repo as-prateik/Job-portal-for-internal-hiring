@@ -28,6 +28,11 @@ const UserSchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
+  employeeId: {
+    type: Number,
+    required: true,
+    unique: true
+  },
   name: {
     type: String,
     required: true,
@@ -43,6 +48,7 @@ const UserSchema = new mongoose.Schema({
     required: true,
     trim: true,
     lowercase: true,
+    unique: true
   },
   phone: {
     type: String,

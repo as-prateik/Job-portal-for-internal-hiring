@@ -43,6 +43,9 @@ app.get('/', (req, res) => {
   res.send('Internal Job Portal API is running');
 });
 
+// Error logging middleware
+app.use(errorlogger);
+
 // 404 handler
 app.use((req, res) => {
   res.status(404).json({ message: 'Route not found' });
@@ -54,7 +57,6 @@ app.use((err, req, res, next) => {
   res.status(500).json({ message: 'Internal Server Error' });
 });
 
-app.use(errorlogger);
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);

@@ -1,0 +1,14 @@
+in GET /api/users/profile/:employeeId ----- now everyone can access the employee profile by using their employee id this access should only be available for hr . the manager can access the employee profile only if the employee has an active application on the job that the manager posted 
+
+
+in Update Own Profile PUT /api/users/profile here in the body the updating key value pair need to have an option of appending to the existing data and removing only one value among multiple values in a key-values pair
+
+when posting jobs in http://localhost:5000/api/jobs the postedBy is filled by authid so instead it should be filled by employee id . need to check if if the last date is passed then isActive is changed to false
+
+in jobs add schema add job id starting with J101
+
+when applying for jobs in http://localhost:5000/api/jobs/682e0eedcc415cbd84eb9951/apply it is entering authid as userId it need to be changed to employeeId
+
+when a manager checks the employees who applied to the job in http://localhost:5000/api/jobs/682e0eedcc415cbd84eb9951/applicants the UserId is given as null in response so check it
+
+check how can a manager change the status of the application it rejected,shortlisted,selected,etc

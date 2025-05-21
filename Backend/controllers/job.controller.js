@@ -68,7 +68,7 @@ exports.deleteJob = async (req, res) => {
       return res.status(403).json({ message: 'You can only delete your own job postings' });
     }
 
-    await job.remove();
+    await job.deleteOne();
     res.json({ message: 'Job deleted successfully' });
   } catch (error) {
     res.status(500).json({ message: 'Server error', error: error.message });
@@ -117,7 +117,7 @@ exports.applyToJob = async (req, res) => {
 
     // Add applicant to job
     job.applicants.push({
-      userId: mongoose.Types.ObjectId(userId),
+      userId:new mongoose.Types.ObjectId(userId),
       status: 'applied',
       appliedAt: new Date()
     });
