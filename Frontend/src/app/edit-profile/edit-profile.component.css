@@ -1,0 +1,309 @@
+/* .app-container {
+    display: flex;
+    font-family: Arial, sans-serif;
+  }
+  
+  .sidebar {
+    width: 60px;
+    background: #f4f4f4;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid #ddd;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    margin: 1rem 0;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 2rem;
+    background: #fafafa;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .apply-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .search-input {
+    padding: 0.5rem;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+
+  .input-wrapper{
+    position: relative;
+  }
+
+  .input-wrapper i.icon-pencil {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-style: normal;
+    background: #ccc;
+    border-radius: 50%;
+    padding: 0.2rem 0.4rem;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .profile-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #eee;
+  }
+  
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  input[type='text'],
+  input[type='email'] {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  
+  .btn {
+    margin-top: 1.5rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .profile-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  .attachments {
+    margin-top: 2rem;
+  }
+  
+  .attachment-cards {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .education{
+    margin-top: 2rem;
+  }
+
+  .education-cards{
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .card {
+    background: #e3e3e3;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 150px;
+    text-align: center;
+  }
+  
+   */
+
+
+   .app-container {
+    display: flex;
+    font-family: Arial, sans-serif;
+  }
+  
+  .sidebar {
+    width: 60px;
+    background: #f4f4f4;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid #ddd;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    margin: 1rem 0;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 2rem;
+    background: #fafafa;
+  }
+  
+  .profile-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #eee;
+  }
+  
+  /* Editable Field Styling */
+  .editable-field {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  
+  .editable-field label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+  }
+  
+  .field-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f1f1f1;
+    margin-bottom: 0.5rem;
+    font-size: 16px;
+  }
+  
+  .field-display i {
+    cursor: pointer;
+    color: #007bff;
+  }
+  
+  input[type='text'],
+  input[type='email'] {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  .btn {
+    margin-top: 1.5rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .profile-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  .attachments,
+  .education {
+    margin-top: 2rem;
+  }
+  
+  .attachment-cards,
+  .education-cards {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .card {
+    background: #e3e3e3;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 150px;
+    text-align: center;
+  }
+  
+  /* Upload/Add Icons */
+  .upload-icon {
+    font-size: 18px;
+    color: #28a745;
+    cursor: pointer;
+    margin-left: 8px;
+    transition: transform 0.2s ease;
+  }
+  
+  .upload-icon:hover {
+    transform: scale(1.2);
+  }

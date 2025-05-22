@@ -1,0 +1,41 @@
+<div class="job-list">
+    <h2>Job Listings</h2>
+  
+    <!-- Form for Creating Job -->
+    <form (ngSubmit)="createJob()">
+      <div>
+        <label for="title">Job Title:</label>
+        <input id="title" [(ngModel)]="newJob.title" name="title" required>
+      </div>
+      <div>
+        <label for="name">Company Name:</label>
+        <input id="name" [(ngModel)]="newJob.name" name="name" required>
+      </div>
+      <div>
+        <label for="location">Location:</label>
+        <input id="location" [(ngModel)]="newJob.location" name="location" required>
+      </div>
+      <div>
+        <label for="description">Description:</label>
+        <textarea id="description" [(ngModel)]="newJob.description" name="description" required></textarea>
+      </div>
+      <div>
+        <label for="department">Department:</label>
+        <input id="department" [(ngModel)]="newJob.department" name="department" required>
+      </div>
+      <button type="submit">Create Job</button>
+    </form>
+  
+    <h3>Job Listings:</h3>
+    <ul>
+      <li *ngFor="let job of jobs">
+        <h4>{{ job.title }}</h4>
+        <p>{{ job.description }}</p>
+        <p><strong>Department:</strong> {{ job.department }}</p>
+        <p><strong>Location:</strong> {{ job.location }}</p>
+        <p><strong>Status:</strong> {{ job.status }}</p>
+        <button (click)="deleteJob(job._id)">Delete</button>
+      </li>
+    </ul>
+  </div>
+  

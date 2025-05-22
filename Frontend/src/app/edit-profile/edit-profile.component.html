@@ -1,0 +1,144 @@
+<!-- edit-component.html -->
+<div class="app-container">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <ul>
+      <li><i class="icon-home"></i></li>
+      <li><i class="icon-profile"></i></li>
+      <li><i class="icon-doc"></i></li>
+      <li><i class="icon-setting"></i></li>
+    </ul>
+  </aside> <!-- Main Content -->
+  <main class="main-content">
+    <!-- Header -->
+    <!-- Profile Info -->
+    <section class="profile-card">
+      <div class="profile-header">
+        <!-- <img src="assets/avatar-placeholder.png" alt="Profile" class="avatar" /> -->
+        <div class="flex">
+          <!-- Side Card -->
+          <div class="w-1/4 bg-white shadow rounded-lg p-4 mr-4">
+            <div class="flex flex-col items-center text-center">
+              <img src="https://via.placeholder.com/100" alt="Profile" class="rounded-full mb-2 w-24 h-24">
+              <h2 class="text-xl font-semibold">{{ name }}</h2>
+              <p class="text-sm text-gray-600">{{ role }}</p>
+              <p class="text-sm text-gray-600">ID: INFY123 </p>
+            </div>
+            <div class="mt-4">
+              <p class="text-gray-800 text-sm">
+                "This user has no additional details. Bio of the user"
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div>
+      <h2>{{ name }}</h2>
+      <p>{{ email }}</p>
+      <p>{{ role }}</p>
+    </div>
+
+
+<form (ngSubmit)="onSubmit()" #profileForm="ngForm">
+  <div class="form-grid">
+    <!-- Full Name -->
+    <div class="editable-field">
+      <label>Full Name</label>
+      <div class="field-display">
+        <span>{{ name }}</span>
+        <i class="fas fa-pencil-alt" (click)="editField('name')"></i>
+      </div>
+      <input *ngIf="editingField === 'name'" type="text" [(ngModel)]="name" name="name" />
+    </div>
+
+    <!-- Email -->
+    <div class="editable-field">
+      <label>Email</label>
+      <div class="field-display">
+        <span>{{ email }}</span>
+        <i class="fas fa-pencil-alt" (click)="editField('email')"></i>
+      </div>
+      <input *ngIf="editingField === 'email'" type="email" [(ngModel)]="email" name="email" />
+    </div>
+
+    <!-- Role -->
+    <div class="editable-field">
+      <label>Role</label>
+      <div class="field-display">
+        <span>{{ role }}</span>
+        <i class="fas fa-pencil-alt" (click)="editField('role')"></i>
+      </div>
+      <input *ngIf="editingField === 'role'" type="role" [(ngModel)]="role" name="role" />
+    </div>
+
+    <!-- Phone -->
+    <div class="editable-field">
+      <label>Phone</label>
+      <div class="field-display">
+        <span>{{ phone }}</span>
+        <i class="fas fa-pencil-alt" (click)="editField('phone')"></i>
+      </div>
+      <input *ngIf="editingField === 'phone'" type="text" [(ngModel)]="phone" name="phone" />
+    </div>
+
+    <!-- Location -->
+    <div class="editable-field">
+      <label>Location</label>
+      <div class="field-display">
+        <span>{{ location }}</span>
+        <i class="fas fa-pencil-alt" (click)="editField('location')"></i>
+      </div>
+      <input *ngIf="editingField === 'location'" type="text" [(ngModel)]="location" name="location" />
+    </div>
+
+    <!-- Gender -->
+    <div class="editable-field">
+      <label>Gender</label>
+      <div class="field-display">
+        <span>{{ gender }}</span>
+        <i class="fas fa-pencil-alt" (click)="editField('gender')"></i>
+      </div>
+      <input *ngIf="editingField === 'gender'" type="text" [(ngModel)]="gender" name="gender" />
+    </div>
+
+    <!-- Employee ID -->
+    <div class="editable-field">
+      <label>Employee ID</label>
+      <div class="field-display">
+        <span>{{ id }}</span>
+        <i class="fas fa-pencil-alt" (click)="editField('id')"></i>
+      </div>
+      <input *ngIf="editingField === 'id'" type="text" [(ngModel)]="id" name="id" />
+    </div>
+  </div>
+  <button type="submit" class="btn">Save Changes</button>
+</form>
+
+<!-- Profile Statistics -->
+<div class="profile-stats">
+  <div><strong>Jobs Applied:</strong> 33</div>
+  <div><strong>Jobs Saved:</strong> 12</div>
+  <div><strong>Profile Views:</strong> 77</div>
+</div>
+
+
+<!-- Attachments Section -->
+<section class="attachments">
+  <h3>Resume, CV & Attachments <i class="fas fa-plus-circle upload-icon" (click)="uploadFile('attachment')"></i></h3>
+  <div class="attachment-cards">
+    <div class="card">Resume.pdf</div>
+    <div class="card">Resume_UX.pdf</div>
+    <div class="card">Resume-Product.pdf</div>
+  </div>
+</section>
+
+<!-- Education Section-->
+<section class="education">
+  <h3>Education <i class="fas fa-plus-circle upload-icon" (click)="uploadFile('education')"></i></h3>
+  <div class="education-cards">
+    <div class="card">Degree.pdf</div>
+    <div class="card">Transcript.pdf</div>
+  </div>
+</section>
